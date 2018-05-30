@@ -1,0 +1,63 @@
+<app-group-header header="Events">
+  <mat-form-field>
+    <input matInput
+      placeholder="Filter"
+      (keyup)="applyFilter($event.target.value)">
+  </mat-form-field>
+  <button mat-fab color="primary"
+    (click)="onExport()"
+    [disabled]="true"
+    class="ml-3">
+    <mat-icon>save</mat-icon>
+  </button>
+</app-group-header>
+
+<div class="mat-elevation-z8">
+  <table mat-table matSort [dataSource]="dataSource">
+
+    <ng-container matColumnDef="cam">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Cam</th>
+      <td mat-cell *matCellDef="let event">
+        {{ event.cam }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="task">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Task</th>
+      <td mat-cell *matCellDef="let event">
+        {{ event.task }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="relay">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Relay</th>
+      <td mat-cell *matCellDef="let event">
+        {{ event.relay }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="createdAt">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Time</th>
+      <td mat-cell *matCellDef="let event">
+        {{ event.createdAt | date:'shortTime' }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="latency">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Latency</th>
+      <td mat-cell *matCellDef="let event">
+        {{ event.latency }}
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"
+      [ngClass]="{ 'highlight': !row.done }">
+    </tr>
+  </table>
+
+  <mat-paginator
+    [pageSizeOptions]="pageSizeOptions" 
+    showFirstLastButtons [ngClass]="animateOnRouteEnter">
+  </mat-paginator>
+</div>

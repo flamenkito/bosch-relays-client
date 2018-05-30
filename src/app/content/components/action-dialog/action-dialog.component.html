@@ -1,0 +1,22 @@
+<form [formGroup]="actionForm">
+  <app-action-form
+    [parent]="actionForm"
+    [actionTypes]="actionTypeArray$ | async">
+    <app-group-header
+      [header]="data.model.cam.name"
+      [info]="data.model.task.name">
+      <button *ngIf="actionForm.pristine && data.model.id"
+        mat-mini-fab color="warn"
+        (click)="onDeleteAction()"
+        [disabled]="">
+        <mat-icon>delete</mat-icon>
+      </button>
+      <button *ngIf="actionForm.dirty || !data.model.id"
+        mat-fab color="primary"
+        (click)="onUpsertAction()"
+        [disabled]="actionForm.invalid">
+        <mat-icon>save</mat-icon>
+      </button>
+    </app-group-header>
+  </app-action-form>
+</form>

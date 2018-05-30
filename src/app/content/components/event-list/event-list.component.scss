@@ -1,0 +1,16 @@
+@import '../../../../../node_modules/bootstrap/scss/bootstrap-grid.scss';
+
+table {
+  width: 100%;
+}
+tr {
+  &:nth-child(even) {
+    background-color: darken($white, 7%)
+  }
+  &.highlight {
+    background-color: $orange;
+    &:nth-child(even) {
+      background-color: darken($orange, 2%);
+    }
+  }
+}

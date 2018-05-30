@@ -1,0 +1,25 @@
+<form [formGroup]="camForm">
+  <ng-content></ng-content>
+  <app-cam-form-main [parent]="camForm">
+    <app-group-header header="Cam">
+      <button *ngIf="camForm.pristine" mat-mini-fab color="warn"
+        (click)="onDeleteCam()"
+        [disabled]="tasks.length > 0">
+        <mat-icon>delete</mat-icon>
+      </button>
+      <button *ngIf="camForm.dirty" mat-fab color="primary"
+        (click)="onUpdateCam()"
+        [disabled]="camForm.invalid">
+        <mat-icon>save</mat-icon>
+      </button>
+    </app-group-header>
+  </app-cam-form-main>
+  <app-cam-form-tasks [parent]="camForm"
+    (deleteTask)="onDeleteTask($event)">
+    <app-group-header header="Tasks">
+      <button mat-fab color="primary" (click)="onCreateTask()">
+        <mat-icon>add</mat-icon>
+      </button>
+    </app-group-header>
+  </app-cam-form-tasks>
+</form>

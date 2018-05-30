@@ -1,0 +1,16 @@
+@import '../node_modules/bootstrap/scss/bootstrap.scss';
+
+body { margin: 0; }
+
+div {
+  &.relay-col {
+    @extend .col-md-6;
+    @extend .col-xl-4;
+    @extend .mb-2;
+  }
+  &.cam-col {
+    @extend .col-md-6;
+    @extend .col-xl-4;
+    @extend .mb-2;
+  }
+}

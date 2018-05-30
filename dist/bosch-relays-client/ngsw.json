@@ -1,0 +1,95 @@
+{
+  "configVersion": 1,
+  "index": "/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "urls": [
+        "/0.a6c0b17cb69c7fddb2f7.js",
+        "/favicon.ico",
+        "/index.html",
+        "/main.545ecb8c4cdcc182fff5.js",
+        "/polyfills.1df7106a4b82f3594681.js",
+        "/runtime.9984c231661cbaf59f1e.js",
+        "/styles.e79f778259714ad2e64c.css"
+      ],
+      "patterns": []
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "urls": [
+        "/assets/axion-logo.png",
+        "/assets/bosch-icon.png",
+        "/assets/error.png",
+        "/assets/icons/icon-128x128.png",
+        "/assets/icons/icon-144x144.png",
+        "/assets/icons/icon-152x152.png",
+        "/assets/icons/icon-192x192.png",
+        "/assets/icons/icon-384x384.png",
+        "/assets/icons/icon-512x512.png",
+        "/assets/icons/icon-72x72.png",
+        "/assets/icons/icon-96x96.png",
+        "/assets/ok.png",
+        "/assets/pulse-off.svg",
+        "/assets/pulse-on.svg",
+        "/assets/question.png",
+        "/assets/state-off.svg",
+        "/assets/state-on.svg",
+        "/assets/turn-off.svg",
+        "/assets/turn-on.svg"
+      ],
+      "patterns": []
+    }
+  ],
+  "dataGroups": [],
+  "hashTable": {
+    "/0.a6c0b17cb69c7fddb2f7.js": "744ffae0778c7e0ffe7c4851f758f550249f31f7",
+    "/assets/axion-logo.png": "7df186d99793139c4943e2cc7c5590fbbfdfea92",
+    "/assets/bosch-icon.png": "008892251a810b85b612629d82faca59d854ac34",
+    "/assets/error.png": "3611fbd33320db940fdbac93fa6e1b77668ed4f9",
+    "/assets/icons/icon-128x128.png": "dae3b6ed49bdaf4327b92531d4b5b4a5d30c7532",
+    "/assets/icons/icon-144x144.png": "b0bd89982e08f9bd2b642928f5391915b74799a7",
+    "/assets/icons/icon-152x152.png": "7479a9477815dfd9668d60f8b3b2fba709b91310",
+    "/assets/icons/icon-192x192.png": "1abd80d431a237a853ce38147d8c63752f10933b",
+    "/assets/icons/icon-384x384.png": "329749cd6393768d3131ed6304c136b1ca05f2fd",
+    "/assets/icons/icon-512x512.png": "559d9c4318b45a1f2b10596bbb4c960fe521dbcc",
+    "/assets/icons/icon-72x72.png": "c457e56089a36952cd67156f9996bc4ce54a5ed9",
+    "/assets/icons/icon-96x96.png": "3914125a4b445bf111c5627875fc190f560daa41",
+    "/assets/ok.png": "311419e3414b5a3ec8aa657f2f19d505aff182ec",
+    "/assets/pulse-off.svg": "ac7e2bb798c0cfb772f1c455ea954537a0630979",
+    "/assets/pulse-on.svg": "ef00b0165b264090872f52b39b2a465945b0f145",
+    "/assets/question.png": "426b7fa69adaae27d7d8191a3b6a868891bbcfcf",
+    "/assets/state-off.svg": "b6710b775ec58c9164748660e5746ff1bdfaf96e",
+    "/assets/state-on.svg": "fc5d7409b7c95bf7437c10f801f944b91dd5ee71",
+    "/assets/turn-off.svg": "69743a5376e32b9826aaab52a0827968abb55f04",
+    "/assets/turn-on.svg": "40f1a819112cc128c087515258af7d8d2c5d6488",
+    "/favicon.ico": "008892251a810b85b612629d82faca59d854ac34",
+    "/index.html": "4d03eacdee1821213af1619d5f1ef0f595aae46d",
+    "/main.545ecb8c4cdcc182fff5.js": "340183d717c3930bc99ae581a6fd6fdcc977f135",
+    "/polyfills.1df7106a4b82f3594681.js": "afb4118e6847c7b0eb20d8f560dffe455d089eb3",
+    "/runtime.9984c231661cbaf59f1e.js": "83205b0592dd350a1a67c9d947980dedcb7f3894",
+    "/styles.e79f778259714ad2e64c.css": "7bb5c1418698c15f21b9a19c40ca2bb5d5a1b790"
+  },
+  "navigationUrls": [
+    {
+      "positive": true,
+      "regex": "^\\/.*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^\\/]*\\.[^\\/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^\\/]*__[^\\/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^\\/]*__[^\\/]*\\/.*$"
+    }
+  ]
+}

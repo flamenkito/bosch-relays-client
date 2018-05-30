@@ -1,0 +1,26 @@
+img {
+  &.axion-logo {
+    position: fixed;
+    bottom: 0.6rem;
+    left: 0.6rem;
+    height: 4rem;
+    z-index: 1000;
+  }
+  &.mobile-view {
+    height: 2rem;
+  }
+}
+
+div {
+  &.app-container {
+    min-height: calc(100vh - 64px);
+    min-width: 320px;
+    overflow-x: hidden;
+  }
+}
+
+mat-toolbar {
+  &.app-toolbar {
+    min-height: 64px;
+  }
+}

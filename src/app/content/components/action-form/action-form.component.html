@@ -1,0 +1,45 @@
+<ng-content></ng-content>
+<div [formGroup]="parent">
+  <mat-form-field>
+    <input matInput placeholder="Name"
+      formControlName="name">
+    <mat-error *ngIf="hasError('name')">
+      {{ errorMessage('name') }}
+    </mat-error>
+  </mat-form-field>
+  <div></div>
+  <mat-form-field>
+    <input matInput placeholder="Description"
+      formControlName="description">
+    <mat-error *ngIf="hasError('description')">
+      {{ errorMessage('description') }}
+    </mat-error>
+  </mat-form-field>
+  <div></div>
+  <mat-form-field>
+    <mat-select placeholder="Action type"
+      formControlName="actionTypeId" cdkFocusInitial>
+      <mat-option *ngFor="let type of actionTypes" [value]="type.id">
+        <img [src]="getImage(type)" [alt]="type.name" class="img-thumbnail rounded mr-2" style="height: 1.5rem;"> {{ type.description }}
+      </mat-option>
+    </mat-select>
+    <mat-error *ngIf="hasError('actionTypeId')">
+      {{ errorMessage('actionTypeId') }}
+    </mat-error>
+  </mat-form-field>
+  <div></div>
+  <mat-form-field>
+    <input matInput placeholder="Action delay" type="number"
+      formControlName="actionDelay">
+    <mat-error *ngIf="hasError('actionDelay')">
+      {{ errorMessage('actionDelay') }}
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Pulse time" type="number"
+      formControlName="pulseTime">
+    <mat-error *ngIf="hasError('pulseTime')">
+      {{ errorMessage('pulseTime') }}
+    </mat-error>
+  </mat-form-field>
+</div>

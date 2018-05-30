@@ -1,0 +1,42 @@
+<img src="/assets/axion-logo.png" alt="Axion"
+  class="axion-logo"
+  [class.mobile-view]="mobileView$ | async">
+<app-sidenav
+  [visible]="loggedIn$ | async"
+  [opened]="showSidenav$ | async"
+  [mobile]="mobileView$ | async"
+  (close)="closeSidenav()"
+  (logout)="logout()">
+
+  <mat-toolbar color="primary" class="app-toolbar">
+    <button *ngIf="menuButton$ | async"
+      mat-icon-button
+      (click)="toggleSidenav()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <div class="mr-3"></div>
+    Relaxion
+  </mat-toolbar>
+
+  <!--app-user-panel *ngIf="loggedIn$ | async"
+      [loggedUser]="loggedUser$ | async">
+    </app-user-panel-->
+
+  <div class="app-container container-fluid">
+    <div class="row p-1">
+      <div class="offset-sm-1 col-sm-10">
+        <div [@routerTransition]="navigate$ | async">
+          <router-outlet #routerOutlet="outlet">
+          </router-outlet>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</app-sidenav>
+
+<app-popup
+  [show]="showPopup$ | async"
+  [message]="popupMessage$ | async"
+  (close)="onPopupClose()">
+</app-popup>

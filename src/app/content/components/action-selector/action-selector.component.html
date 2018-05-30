@@ -1,0 +1,54 @@
+<div class="row">
+  <div class="col-6">
+    <div *ngFor="let cam of camModels" class="mb-3">
+      <app-group-header [header]="cam.name">
+      </app-group-header>
+      <mat-card mwlDraggable *ngFor="let task of cam.tasks"
+        [dropData]="getDropData(cam, task)"
+        (dragStart)="onDragStart(task)"
+        (dragEnd)="onDragEnd(task)"
+        class="mb-1 mat-elevation-z8"
+        [class.drag-active]="getTaskState(task).dragActive"
+        [ngClass]="animateOnRouteEnter">
+        <mat-card-header>
+          <mat-card-title>
+            {{ task.name }}
+          </mat-card-title>
+          <mat-card-subtitle>
+            {{ task.description | appEllipsis:22 }}
+          </mat-card-subtitle>
+        </mat-card-header>
+      </mat-card>
+    </div>
+  </div>
+  <div class="col-6">
+    <app-group-header header="Relays">
+    </app-group-header>
+    <mat-card mwlDroppable *ngFor="let relay of relayModels"
+      [ngClass]="animateOnRouteEnter"
+      (dragEnter)="getRelayState(relay).dropOverActive = true"
+      (dragLeave)="getRelayState(relay).dropOverActive = false"
+      (drop)="onDrop($event, relay)"
+      class="mb-1"
+      [class.mat-elevation-z8]="getRelayState(relay).dropOverActive"
+      [class.drop-over-active]="getRelayState(relay).dropOverActive">
+      <mat-card-header>
+        <mat-card-title>
+          {{ relay.name }}
+        </mat-card-title>
+        <mat-card-subtitle>
+          {{ relay.description }}
+        </mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-actions>
+        <div *ngFor="let model of relay.actions; first as f"
+          [class.pt-1]="!f">
+          <app-action-button
+            [model]="model"
+            (click)="onSelectAction(model)">
+          </app-action-button>
+        </div>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>

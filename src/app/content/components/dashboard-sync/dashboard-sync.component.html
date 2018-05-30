@@ -1,0 +1,7 @@
+<button mat-fab 
+  [color]="getSyncColor()"
+  [matTooltip]="pong ? (pong | date:'medium') : message"
+  matTooltipPosition="left"
+  (click)="onSync()">
+  <mat-icon>sync</mat-icon>
+</button>

@@ -1,0 +1,31 @@
+<ng-content>
+</ng-content>
+<mat-card>
+  <div [formGroup]="parent">
+    <mat-slide-toggle class="mr-3 text-muted"
+      formControlName="enabled">
+    </mat-slide-toggle>
+    <br>
+    <mat-form-field>
+      <input matInput placeholder="Name"
+        formControlName="name">
+      <mat-error *ngIf="hasError('name')">
+        {{ errorMessage('name') }}
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Description"
+        formControlName="description">
+      <mat-error *ngIf="hasError('description')">
+        {{ errorMessage('description') }}
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="IP address"
+        formControlName="ip">
+      <mat-error *ngIf="hasError('ip')">
+        {{ errorMessage('ip') }}
+      </mat-error>
+    </mat-form-field>
+  </div>
+</mat-card>
