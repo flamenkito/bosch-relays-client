@@ -29,7 +29,9 @@ export class AuthEffects {
     const auth = this.localStorageService.getItem(AUTH_KEY);
     if (auth && auth.token) {
       // TODO: refactor
-      this.store.dispatch(new AuthAction.LoginSuccess(auth.token));
+      setTimeout(() => {
+        this.store.dispatch(new AuthAction.LoginSuccess(auth.token));
+      }, 0);
     }
   });
 
@@ -64,10 +66,7 @@ export class AuthEffects {
   @Effect()
   loginSuccess$ = this.actions$.pipe(
     ofType(AuthAction.LOGIN_SUCCESS),
-    switchMap(() => [
-      new AuthAction.LoggedUser(),
-      new SubscriptionAction.Subscribe()
-    ])
+    switchMap(() => [new AuthAction.LoggedUser()])
   );
 
   @Effect()
@@ -84,7 +83,10 @@ export class AuthEffects {
       this.authService
         .loggedUser()
         .pipe(
-          map(loggedUser => new AuthAction.LoggedUserSuccess(loggedUser)),
+          switchMap(loggedUser => [
+            new AuthAction.LoggedUserSuccess(loggedUser),
+            new SubscriptionAction.Subscribe()
+          ]),
           catchError(err => of(new AuthAction.LoggedUserFailure(err)))
         )
     )
